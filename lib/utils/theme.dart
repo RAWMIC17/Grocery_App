@@ -3,17 +3,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Mycolors {
-  static Color lighgreencolor = Vx.green300;
+  static Color lightgreencolor = Vx.green100;
   static Color creamcolor = Color(0xfff5f5f5);
   static Color darkcreamcolor = Vx.gray900;
+  static Color buttoncolor = Vx.green500;
 
   static ThemeData lightTheme(BuildContext) => ThemeData(
         primarySwatch: Colors.green,
         fontFamily: GoogleFonts.poppins().fontFamily,
         canvasColor: creamcolor,
         cardColor: Colors.white,
-        colorScheme: ColorScheme.fromSwatch(brightness: Brightness.light).copyWith(secondary: lighgreencolor),
-        highlightColor: lighgreencolor,
+        colorScheme: ColorScheme.fromSwatch(brightness: Brightness.light).copyWith(secondary: lightgreencolor),
+        highlightColor: lightgreencolor,
         appBarTheme: AppBarTheme(
           color: Colors.white,
           elevation: 0.0,
@@ -26,8 +27,8 @@ class Mycolors {
         primarySwatch: Colors.green,
         fontFamily: GoogleFonts.poppins().fontFamily,
         canvasColor: darkcreamcolor,
-        colorScheme: ColorScheme.fromSwatch(brightness: Brightness.dark).copyWith(secondary: lighgreencolor),
-        highlightColor: lighgreencolor,
+        colorScheme: ColorScheme.fromSwatch(brightness: Brightness.dark).copyWith(secondary: lightgreencolor),
+        highlightColor: lightgreencolor,
         appBarTheme: AppBarTheme(
           color: Colors.white,
           elevation: 0.0,

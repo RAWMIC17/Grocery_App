@@ -7,31 +7,36 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: context.theme.canvasColor,
-        body: Container(
-          padding: Vx.m0,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Container(padding: EdgeInsets.only(top: 264.5,bottom: 0.0),
-                  child: Image.asset(
-                    "lib/assets/Logo Shapes 41.png",
-                    fit: BoxFit.cover,
+    return SafeArea(
+      bottom: false,
+      top: false,
+      right: false,
+      child: Scaffold(
+          backgroundColor: context.canvasColor,
+          body: Container(
+            padding: Vx.m0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Container(padding: EdgeInsets.only(top: 264.5,left: 20.0,bottom: 0.0),
+                    child: Image.asset(
+                      "lib/assets/Logo Shapes 41.png",
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left:20.0,bottom: 0.0),
-                child: Image.asset(
-                  "lib/assets/design-78d26ec2-4b2f-4002-acb9-389fc152783c 1.png",
-                  fit: BoxFit.cover,
-                  alignment: Alignment.bottomLeft,
+                Container(
+                  padding: EdgeInsets.only(left:20.0,bottom: 0.0),
+                  child: Image.asset(
+                    "lib/assets/design-78d26ec2-4b2f-4002-acb9-389fc152783c 1.png",
+                    fit: BoxFit.cover,
+                    alignment: Alignment.bottomLeft,
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ));
+              ],
+            ),
+          )),
+    );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app_demo/Pages/onboarding_1.dart';
+import 'package:grocery_app_demo/Pages/onboarding_2.dart';
 import 'package:grocery_app_demo/Pages/splash_screen.dart';
 import 'package:grocery_app_demo/utils/routes.dart';
 
@@ -14,10 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.onboarding1Route,
-      routes: {"/":(context) =>  SplashPage(),
+      //home: SplashPage(),//for splashscreen
+      initialRoute: MyRoutes.splashRoute,
+      routes: {//"/":(context) =>  SplashPage(),
       MyRoutes.splashRoute: (context) => SplashPage(),
       MyRoutes.onboarding1Route:(context) => Onboarding1Page(),
+      MyRoutes.onboarding2Route:(context) => Onboarding2Page(),
       }
       );
   }

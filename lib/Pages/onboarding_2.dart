@@ -1,16 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_app_demo/utils/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class Onboarding1Page extends StatelessWidget {
-  const Onboarding1Page({super.key});
+class Onboarding2Page extends StatelessWidget {
+  const Onboarding2Page({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Container(
+        padding: EdgeInsets.only(bottom: 685.0),
+        child: FloatingActionButton.small(
+          onPressed: () {},
+          backgroundColor: Mycolors.buttoncolor,
+          child: Icon(
+            CupertinoIcons.arrow_right,
+            color: Vx.white,
+          ),
+          //label: Text('Skip'),
+        ),
+      ),
       backgroundColor: Mycolors.lightgreencolor,
       body: Stack(
         children: [
@@ -34,67 +45,41 @@ class Onboarding1Page extends StatelessWidget {
             ),
           ),
           Container(
-            constraints: BoxConstraints.expand(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-            ),
-            padding: EdgeInsets.only(left: 0.7),
+            padding: EdgeInsets.only(left: 20.0, top: 52.0, right: 10.0),
             child: Image.asset(
-              "lib/assets/8140 1(1).png",
-              fit: BoxFit.cover,
+                "lib/assets/image 1616.png"),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 463.0, left: 35.0),
+            //color: Vx.white,
+            child: Image.asset(
+              "",
+              fit: BoxFit.contain,
             ),
           ),
           Positioned(
               top: 676,
-              left: 35.5,
+              left: 168.5,
               child: Container(
                 //padding: EdgeInsets.all(5.0),
-                height: 66,
-                width: 320,
+                height: 56,
+                width: 56,
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all<Size>(Size(20, 20)),
+                    minimumSize: MaterialStateProperty.all<Size>(Size(8, 8)),
                     shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
-                            15.0), // Adjust the radius as needed
+                            50.0), // Adjust the radius as needed
                       ),
                     ),
                     backgroundColor:
                         MaterialStateProperty.all(Mycolors.buttoncolor),
                   ),
-                  child: //Text(
-                      "Get Started".text.xl3.light.make(),
-                  //style: GoogleFonts.abhayaLibre(fontSize: 24.0),
-                  //),//Icon(CupertinoIcons.arrow_right),
+                  child: Icon(CupertinoIcons.arrow_right),
                 ),
-              )),
-          Positioned(
-            height: 898,
-            width: 415,
-            child: Container(
-              child: Image.asset("lib/assets/Group.png"),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 500),
-            child: "Welcome             to our store"
-                .text
-                .size(50)
-                .white
-                .center
-                .make(),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 624,left: 40),
-            child: "Get your groceries in as fast as one hour"
-                .text
-                .xl.light
-                .white
-                .center
-                .make(),
-          )
+              ))
         ],
       ),
     );

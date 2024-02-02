@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grocery_app_demo/Pages/signin.dart';
 import 'package:grocery_app_demo/utils/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -14,7 +15,7 @@ class Onboarding1Page extends StatelessWidget {
       backgroundColor: Mycolors.lightgreencolor,
       body: Stack(
         children: [
-          Positioned(
+          /* Positioned(
             bottom: 710.0,
             left: 293.0,
             child: Container(
@@ -32,7 +33,7 @@ class Onboarding1Page extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ),*/
           Container(
             constraints: BoxConstraints.expand(
               width: MediaQuery.of(context).size.width,
@@ -44,32 +45,6 @@ class Onboarding1Page extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          Positioned(
-              top: 676,
-              left: 35.5,
-              child: Container(
-                //padding: EdgeInsets.all(5.0),
-                height: 66,
-                width: 320,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all<Size>(Size(20, 20)),
-                    shape: MaterialStateProperty.all<OutlinedBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                            15.0), // Adjust the radius as needed
-                      ),
-                    ),
-                    backgroundColor:
-                        MaterialStateProperty.all(Mycolors.buttoncolor),
-                  ),
-                  child: //Text(
-                      "Get Started".text.xl3.light.make(),
-                  //style: GoogleFonts.abhayaLibre(fontSize: 24.0),
-                  //),//Icon(CupertinoIcons.arrow_right),
-                ),
-              )),
           Positioned(
             height: 898,
             width: 415,
@@ -87,14 +62,46 @@ class Onboarding1Page extends StatelessWidget {
                 .make(),
           ),
           Container(
-            padding: EdgeInsets.only(top: 624,left: 40),
+            padding: EdgeInsets.only(top: 624, left: 40),
             child: "Get your groceries in as fast as one hour"
                 .text
-                .xl.light
+                .xl
+                .light
                 .white
                 .center
                 .make(),
-          )
+          ),
+          Positioned(
+              top: 676,
+              left: 35.5,
+              child: Container(
+                //padding: EdgeInsets.all(5.0),
+                height: 66,
+                width: 320,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SignInPage()));
+                  },
+                  style: ButtonStyle(
+                    elevation: MaterialStateProperty.all(100),
+                    shadowColor: MaterialStatePropertyAll(Vx.white),
+                    minimumSize: MaterialStateProperty.all<Size>(Size(20, 20)),
+                    shape: MaterialStateProperty.all<OutlinedBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            15.0), // Adjust the radius as needed
+                      ),
+                    ),
+                    backgroundColor:
+                        MaterialStateProperty.all(Mycolors.buttoncolor),
+                  ),
+                  child: Text(
+                    "Get Started",
+                    style: GoogleFonts.ptSans(
+                        fontSize: 26.0, fontWeight: FontWeight.w300),
+                  ), //Icon(CupertinoIcons.arrow_right),
+                ),
+              )),
         ],
       ),
     );
